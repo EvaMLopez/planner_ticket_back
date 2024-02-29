@@ -22,7 +22,7 @@ public class ImageController {
     @PostMapping(path = "/images")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Archivo subido con éxito: " + fileName);
+        return ResponseEntity.status(HttpStatus.CREATED).body(fileName);
     }
 
 }
